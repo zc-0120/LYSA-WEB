@@ -1,0 +1,265 @@
+/** 元素校正 **/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    height: 500vh;
+}
+
+button, a{
+    cursor: pointer;
+}
+
+p{
+    margin: 0px;
+}
+
+@media (min-width:100px) {
+    .dm{
+        display: none;
+    }
+}
+
+@media (min-width:700px) {
+    .dm{
+        display: flex;
+    }
+}
+
+/** header **/
+header{
+   position: fixed;
+   top: 0;
+   width: 100%;
+   height: 64px;
+   background-color: white;
+}
+
+.navbar{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding-left: 50px;
+    margin: 5px;
+    margin-top: 0px;
+}
+
+.logobtn{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.img_logo{
+    height: 20px;
+}
+
+
+
+/** 漢堡式選單樣式設定 **/
+.menubtn{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0px;
+}
+
+.menubtn.hidden{
+    display: none; /**隱藏**/
+}
+
+.menubtn.show{
+    display: flex; /**顯示**/
+}
+
+.menubtn svg{
+    display: block;
+}
+
+/** 導覽列樣式設定 **/
+.dm{
+    list-style: none; /** 去除列表樣式 **/
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    right: 0;
+    margin-left: auto;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.dmbtn{
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    height: 100%;
+}
+
+.dmbtn a{
+    display: flex;
+    align-items: center; /** 垂直居中 **/
+    height: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0px;
+    font-family: NotoSansTC;
+    font-weight: 400;
+}
+
+.dmbtn:hover{
+    background-color: #ececec;
+    color: black;
+}
+
+.underline{
+    width: 0%;
+    background-color: #358185;
+    height: 2px;
+    transition: width 0.2s ease-in-out;
+    display: block;
+    position: absolute;
+}
+
+.dmbtn:hover .underline{
+    display: block;
+    position: absolute;
+    width: 104px;
+    height: 2px;
+    transition: width 0.2s ease-in-out;
+}
+
+/** 登入按鈕 **/
+.dmbtn.login{
+    border: 2px solid #358185;
+    border-radius: 100px;
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 35px;
+    
+}
+
+.loginbtn{
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: NotoSansTC;
+    font-weight: 500;
+    color: #235a5d;
+}
+
+.dmbtn.login:hover{
+    background-color: #bed2d36c;
+}
+
+/** 聯絡我們 **/
+.dmbtn.ct{
+    background-color: #358185;
+    color: white;
+    border-radius: 50px;
+    margin: 10px;
+    margin-left: 20px;
+    font-size: 14px;
+    font-family: NotoSansTC;
+    font-weight: 500;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 35px;
+}
+
+.dmbtn.ct a{
+    margin: 0px;
+    padding: 0px;
+}
+
+.dmbtn.ct:hover{
+    background-color: #24595c;
+    color: white;
+}
+
+/** 登入選單 **/
+.clickarea{ /** 防止選單消失 **/
+    width: 120px;
+    height: 15px;
+}
+
+.loginmenu{
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
+}
+
+.loginmenu.hidden{
+    display: none; /**隱藏**/
+}
+
+.loginmenu.show{
+    display: block; /**顯示**/
+}
+
+.lm{
+    background-color: white;
+    list-style: none;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 120px;
+    box-shadow: 0px 0px 10px 5px #ececec;
+    border-radius: 15px;
+}
+
+.lmtext{
+    width: 100%;
+    font-size: 12px;
+    font-family: NotoSansTC;
+    font-weight: 500;
+    color: #aaaaaa;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.lmline{
+    width: 100%;
+    height: 1px;
+    background-color: #c8c8c8;
+}
+
+.lmbtn{
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.lmbtn:hover{
+    background-color: #e9e9e9;
+}
+
+.lmbtn svg{
+    opacity: 0;
+    margin-left: 70px;
+    position: fixed;
+    transition: opacity 0.2s ease-in-out, margin-left 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.lmbtn:hover svg{
+    margin-left: 90px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out, margin-left 0.2s ease-in-out;
+}
+
+.lmbtn a{
+    padding: 10px;
+    padding-left: 15px;
+    font-family: NotoSansTC;
+    font-weight: 500;
+    font-size: 15px;
+    width: 100%;
+    z-index: 2;
+}
+
